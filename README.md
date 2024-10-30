@@ -4,7 +4,7 @@ Program to create a TCP client that connects to an Odisi 6001 OFDR system. The p
 ## How to use
 
 - First, make sure that the Odisi software is running. Acquire and set the sensor key if necessary. Also, make sure to set all desired gages and segments before 'Arming' the system.
-- Once everything is set up, run the program with the command "python3 OdisiTCPClient.py". You can now 'Arm' the Odisi if you have not done so already.
+- Once everything is set up, run the program with the command "python3 OdisiTCPClient.py" (run this command on a terminal in the folder where the python file is located). You can now 'Arm' the Odisi if you have not done so already.
 - With the system in 'Armed' mode, you should receive a 'Metadata updated!' message from the program. Once this message is received, you can now make a measurement with the 'Start' button in the Odisi software.
 - Note that everytime you want to make a measurement, you should first wait for a 'Metadata updated!' message from the program.
 - Click the 'Stop' button in the Odisi software when you want to stop the measurement.
@@ -21,5 +21,5 @@ Program to create a TCP client that connects to an Odisi 6001 OFDR system. The p
 - This program only receives data from the Odisi system. No commands are sent from this client to the equipment.
 - This program is designed to work with a single Odisi system simultaneously.
 - Wifi connection through Santa Anna network does not allow for TCP connections, so an Ethernet cable is used to connect the user's PC to the Odisi laptop. To get the Odisi Laptop's IP from the Odisi software: Settings -> Streaming Properties (in 'Disarmed' mode). Then, change the server IP address in this script, if necessary.
-- The program can be used in the same laptop as the Odisi software, just changing the server IP address in the script to '127.0.0.1' (in the main() function).
+- The program can also be used in the same laptop as the Odisi software, just changing the server IP address in the script to '127.0.0.1' (in the main() function). It might be necessary to turn off any Wifi connection of the laptop.
 - System/Equipment: Luna Odisi 6001 OFDR, Software: Odisi-6-UserInterface-v2.4.2, Program: Python3 script.
