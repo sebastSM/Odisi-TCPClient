@@ -1,28 +1,4 @@
 """ Script to read Odisi measurements directly into the user PC.
-
-Important things to keep in mind:
-- Wifi connection through Santa Anna network does not allow for TCP connections (not even pinging works!). 
-    For this reason, an Ethernet cable is used to connect the user's PC to the Odisi laptop. 
-- To stablish the connection, get the Odisi Laptop's IP from the Odisi software -> Settings -> Streaming Properties 
-    (or just using the terminal + ifconfig). Then, change the server IP address in this script, if necessary.
-- If the connection is not possible (host not reachable or time out errors) try reconnecting the Ethernet cable and
-    restarting the Odisi software.
-- Currently, only one channel and only one Odisi equipment connection at a time are supported.
-- The measurements are stored into a CSV file found in the same folder as this script.
-- A measurement cycle refers to the time between the user pressing the 'Start' button and the 
-    'Stop' button in the Odisi software.
-- Note that when the 'View' option is selected in the Odisi software after selecting the 'Disarm' option, it starts sending 
-    measurement data without the user asking for it. The proper adquisition of this data is not suported, and thus should be 
-    discarded by the user via the command terminal with "DEL". This is because there is no way of differentiating this data from 
-    the regular measuring data obtained after selecting the 'Start' button. 
-    To finish this measurement stream, select the "Arm" option in the software.
-- Sometimes the keyboard interruption is not detected. In this case, just delete the terminal and start a new one.
-- If the Odisi configuration is to be changed, it has to be in 'Disarmed' mode. After changing the configuration,
-    wait for a 'Metadata updated!...' message to start measuring again.
-- Measurements can be received in three formats from the Odisi:
-    - Full fiber measurement (no gages, no segments)
-    - Gages measurement (multiple gages, no segments)
-    - Gages and segments measurements (multiple gages, multiple segments)
 """
 
 import socket
